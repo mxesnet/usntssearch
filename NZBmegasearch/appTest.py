@@ -1,7 +1,7 @@
 # ./appTest.py
 from flask import Flask
 appTest = Flask(__name__)
-@app.route('/')
+@appTest.route('/')
 def index():
 	return 'Yo, its working!'
 if __name__ == "__main__":
