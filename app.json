@@ -2,6 +2,15 @@
   "name": "usntssearch",
   "scripts": {
   },
+  "image": "heroku/python",
+  "buildpacks": [
+    {
+      "url": "https://github.com/weibeld/heroku-buildpack-run"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ], 
   "env": {
   },
   "formation": {
