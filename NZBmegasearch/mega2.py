@@ -368,10 +368,14 @@ def generic_error(error):
  
 
 if __name__ == "__main__":	
+	
+	from os import environ
+	# appTest.run(debug=True, host='0.0.0.0', port=int(environ.get("PORT", 5000)))
 
 	sugg.asktrend_allparallel()
 	chost = '0.0.0.0'
-	print '>> Running on port '	+ str(cfgsets.cgen['portno'])
+	cport = int(environ.get("PORT", 5000))
+	print '>> Running on port '	+ str(cport)
 	
 	ctx = None
 	
@@ -381,4 +385,4 @@ if __name__ == "__main__":
 		ctx.use_privatekey_file(certdir+'server.key')
 		ctx.use_certificate_file(certdir+'server.crt')
 	
-	app.run(host=chost,port=cfgsets.cgen['portno'], debug = True, ssl_context=ctx)
+	app.run(host=chost,port=cport, debug = True, ssl_context=ctx)
