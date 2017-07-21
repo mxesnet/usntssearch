@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath NZBmegasearch appTest:appTest
+web: gunicorn --pythonpath NZBmegasearch app:appTest
